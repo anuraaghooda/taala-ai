@@ -17,6 +17,8 @@
     --danger: #dc2626;
     --success: #059669;
     --warn: #d97706;
+    --surface: #ffffff;
+    --text-secondary: #6b7280;
   }
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -171,6 +173,14 @@
     transition: border-color 0.2s, background 0.2s, transform 0.15s;
   }
   .btn-secondary:hover { border-color: var(--ink); background: white; transform: translateY(-2px); }
+
+  .hero-note {
+    margin-top: 18px;
+    font-size: 0.8125rem;
+    color: var(--muted);
+    max-width: 520px;
+    animation: fadeUp 0.6s 0.35s ease both;
+  }
 
   .hero-stats {
     display: flex; gap: 48px;
@@ -707,7 +717,7 @@
   <div class="hero-grid"></div>
   <div class="hero-badge">
     <span class="dot"></span>
-    Founded at Columbia University · Now Taking Assessments
+    Born from a Columbia Business School discussion · Now Taking Assessments
   </div>
   <h1>The <em>Trust & Compliance</em> Layer for Enterprise AI</h1>
   <p class="hero-sub">Find the compliance gaps in your AI system before a regulator, customer, or lawsuit does — in 5 business days, for a fraction of what outside counsel charges. No code changes required.</p>
@@ -718,6 +728,7 @@
     </a>
     <a href="#solution" class="btn-secondary">How It Works</a>
   </div>
+  <p class="hero-note">Taala provides an informational risk assessment. It is not legal advice or a certification of compliance.</p>
   <div class="hero-stats">
     <div class="stat-item">
       <div class="stat-num">5<span> days</span></div>
@@ -773,7 +784,7 @@
 <section id="solution">
   <div class="reveal">
     <div class="section-label">How It Works</div>
-    <h2>From submission to deployment-ready in four steps.</h2>
+    <h2>From submission to a clear risk report in four steps.</h2>
     <p class="section-intro">No retraining, code changes, or system integrations required. Taala reviews what you already have.</p>
   </div>
   <div class="steps-wrapper reveal">
@@ -792,13 +803,13 @@
     <div class="step-card">
       <div class="step-num">Step 03</div>
       <h3>Report</h3>
-      <p>Receive a compliance summary, risk breakdown, and generated legal artifacts ready for internal or external review.</p>
+      <p>Receive a risk summary, risk breakdown, and review-ready documentation for internal or external review.</p>
       <div class="step-connector">→</div>
     </div>
     <div class="step-card">
       <div class="step-num">Step 04</div>
       <h3>Deploy</h3>
-      <p>Proceed with confidence — or remediate identified issues before they become costly legal or regulatory problems.</p>
+      <p>Act on the findings: address identified gaps before they become costly legal or regulatory problems.</p>
     </div>
   </div>
 </section>
@@ -943,7 +954,8 @@
       <div class="price-tag">🔍 Per-Assessment</div>
       <div class="price-amount">$2,500</div>
       <p class="price-desc">One-time structured compliance report covering IP provenance, copyright exposure, EU AI Act regulatory mapping, and audit readiness. Delivered in 5 business days.</p>
-      <p class="price-desc" style="margin-top:10px;color:var(--accent);font-weight:500;">Early client offer: $1,250 in exchange for a testimonial — available for our first few clients.</p>
+      <p class="price-desc" style="margin-top:10px;color:#7b9cff;font-weight:500;">Early client offer: $1,250 in exchange for a testimonial — available for our first few clients.</p>
+      <p class="price-desc" style="margin-top:10px;color:#7b9cff;font-weight:500;">A few free pilot assessments are also open to early AI teams. Request one when you submit.</p>
     </div>
     <div class="price-card">
       <div class="featured-label" style="background:#888;">Coming Soon</div>
@@ -963,9 +975,9 @@
 <!-- ROADMAP -->
 <section style="background: white;">
   <div class="reveal">
-    <div class="section-label">Traction & Roadmap</div>
-    <h2>From concept to scale in 18 months.</h2>
-    <p class="section-intro">Built at Columbia Business School. Moving fast toward first revenue.</p>
+    <div class="section-label">Roadmap</div>
+    <h2>From concept to first clients.</h2>
+    <p class="section-intro">Born from a Columbia Business School discussion. Moving toward first revenue.</p>
   </div>
   <div class="roadmap-list reveal">
     <div class="roadmap-item done">
@@ -978,25 +990,25 @@
       <div class="roadmap-dot"></div>
       <div class="roadmap-period">Now — Fall 2026</div>
       <h4>First Pilots</h4>
-      <p>MVP complete, actively closing first paid assessments</p>
+      <p>MVP complete, opening first pilot and early-client assessments</p>
     </div>
     <div class="roadmap-item">
       <div class="roadmap-dot"></div>
       <div class="roadmap-period">Q4 2026 / Early 2027</div>
-      <h4>SaaS Launch</h4>
-      <p>Launch v1 SaaS platform to automate the assessment workflow</p>
-    </div>
-    <div class="roadmap-item">
-      <div class="roadmap-dot"></div>
-      <div class="roadmap-period">Q1 2027</div>
-      <h4>First $100K ARR</h4>
-      <p>Hit first ARR milestone, launch EU AI Act compliance module</p>
+      <h4>First Case Studies</h4>
+      <p>Complete first assessments and share results with client permission</p>
     </div>
     <div class="roadmap-item">
       <div class="roadmap-dot"></div>
       <div class="roadmap-period">2027</div>
+      <h4>Platform v1</h4>
+      <p>Automate the assessment workflow and expand EU AI Act coverage</p>
+    </div>
+    <div class="roadmap-item">
+      <div class="roadmap-dot"></div>
+      <div class="roadmap-period">Later</div>
       <h4>Seed Round</h4>
-      <p>Scale GTM with seed funding</p>
+      <p>Scale go-to-market with seed funding</p>
     </div>
   </div>
 </section>
@@ -1006,9 +1018,9 @@
   <div class="reveal">
     <div class="section-label">Why Taala</div>
     <h2>Can't you just use ChatGPT, Claude, Gemini, or another AI tool?</h2>
-    <p style="max-width:680px;margin:1.5rem auto 0;font-size:1.05rem;color:var(--text-secondary);line-height:1.8;">You could. Here's what you'd be missing.</p>
+    <p class="section-intro">You could. Here's what you'd be missing.</p>
   </div>
-  <div class="reveal" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem;max-width:1000px;margin:2.5rem auto;">
+  <div class="reveal" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem;margin:2.5rem 0;">
     <div style="background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:1.75rem;">
       <div style="font-size:1.5rem;margin-bottom:0.75rem;">🗂️</div>
       <div style="font-weight:600;margin-bottom:0.5rem;">The right framework</div>
@@ -1022,7 +1034,7 @@
     <div style="background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:1.75rem;">
       <div style="font-size:1.5rem;margin-bottom:0.75rem;">✍️</div>
       <div style="font-weight:600;margin-bottom:0.5rem;">Accountability</div>
-      <p style="color:var(--text-secondary);font-size:0.95rem;line-height:1.7;">When Taala signs a report, someone is accountable for the analysis. A ChatGPT conversation has no author. That matters when regulators ask questions.</p>
+      <p style="color:var(--text-secondary);font-size:0.95rem;line-height:1.7;">Every Taala report is reviewed by a human analyst, so there is a named author behind the analysis. A ChatGPT conversation has no author. That matters when regulators or customers ask questions.</p>
     </div>
     <div style="background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:1.75rem;">
       <div style="font-size:1.5rem;margin-bottom:0.75rem;">⚡</div>
@@ -1067,7 +1079,7 @@
 <!-- FOOTER -->
 <footer>
   <span class="footer-logo">Taala</span>
-  <span>Founded at Columbia University · Pre-Seed 2026</span>
+  <span>Born at Columbia Business School · Pre-Seed 2026</span>
   <a href="mailto:hello@taala.ai">hello@taala.ai</a>
 </footer>
 
