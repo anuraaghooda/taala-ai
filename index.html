@@ -229,6 +229,18 @@
     color: var(--ink);
   }
 
+  /* OVERVIEW VIDEO */
+  .overview-section { background: white; padding: 80px 5vw; text-align: center; }
+  .overview-video {
+    margin: 40px auto 0;
+    max-width: 340px;
+    border-radius: 16px;
+    overflow: hidden;
+    background: #0a1830;
+    box-shadow: 0 12px 40px rgba(10,13,20,0.18);
+  }
+  .overview-video video { display: block; width: 100%; height: auto; }
+
   .section-intro {
     font-size: 1.0625rem; color: var(--muted);
     max-width: 560px; margin-top: 12px;
@@ -522,7 +534,7 @@
 
   /* ROADMAP */
   .roadmap-list {
-    display: grid; grid-template-columns: repeat(5, 1fr);
+    display: grid; grid-template-columns: repeat(4, 1fr);
     gap: 0;
     margin-top: 56px;
     position: relative;
@@ -530,7 +542,7 @@
 
   .roadmap-list::before {
     content: '';
-    position: absolute; top: 32px; left: 5%; right: 5%;
+    position: absolute; top: 32px; left: 12.5%; right: 12.5%;
     height: 2px; background: var(--border);
   }
 
@@ -739,13 +751,27 @@
       <div class="stat-label">Early Client Rate</div>
     </div>
     <div class="stat-item">
-      <div class="stat-num">7<span>%</span></div>
-      <div class="stat-label">Max EU AI Act Fine (Share of Global Turnover)</div>
+      <div class="stat-num">29<span> questions</span></div>
+      <div class="stat-label">In the Assessment Framework</div>
     </div>
     <div class="stat-item">
       <div class="stat-num">Aug '26</div>
       <div class="stat-label">EU AI Act Transparency Rules Live</div>
     </div>
+  </div>
+</section>
+
+<!-- OVERVIEW VIDEO -->
+<section class="overview-section" id="overview">
+  <div class="reveal">
+    <div class="section-label">Overview</div>
+    <h2>See it in under a minute.</h2>
+  </div>
+  <div class="overview-video reveal">
+    <video controls preload="metadata" playsinline poster="assets/taala_thumbnail.png" aria-label="Taala AI overview video">
+      <source src="assets/taala_launch.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
   </div>
 </section>
 
@@ -770,7 +796,7 @@
     <div class="problem-card">
       <div class="problem-icon">🌐</div>
       <h3>Regulatory Fines</h3>
-      <p>EU AI Act penalties reach up to €35M or 7% of global annual turnover. Knowing which obligations apply to you is the first step to avoiding them.</p>
+      <p>EU AI Act penalties reach up to €35M or 7% of global annual turnover for the most serious violations, and the Act can apply to US companies whose AI is used in the EU. Knowing which obligations apply to you is the first step.</p>
     </div>
     <div class="problem-card">
       <div class="problem-icon">🔍</div>
@@ -944,11 +970,11 @@
 <!-- PRICING -->
 <section id="pricing" style="background: var(--paper);">
   <div class="reveal">
-    <div class="section-label">Business Model</div>
-    <h2>Start per-assessment. Scale to platform.</h2>
-    <p class="section-intro">B2B SaaS / Professional Services hybrid — growing toward recurring platform revenue.</p>
+    <div class="section-label">Pricing</div>
+    <h2>One assessment. Fixed scope. Fixed price.</h2>
+    <p class="section-intro">A structured risk report on your AI system, delivered in 5 business days.</p>
   </div>
-  <div class="pricing-grid reveal">
+  <div class="pricing-grid reveal" style="grid-template-columns:1fr;max-width:520px;">
     <div class="price-card featured">
       <div class="featured-label">Available Now</div>
       <div class="price-tag">🔍 Per-Assessment</div>
@@ -956,18 +982,6 @@
       <p class="price-desc">One-time structured compliance report covering IP provenance, copyright exposure, EU AI Act regulatory mapping, and audit readiness. Delivered in 5 business days.</p>
       <p class="price-desc" style="margin-top:10px;color:#7b9cff;font-weight:500;">Early client offer: $1,250 in exchange for a testimonial — available for our first few clients.</p>
       <p class="price-desc" style="margin-top:10px;color:#7b9cff;font-weight:500;">A few free pilot assessments are also open to early AI teams. Request one when you submit.</p>
-    </div>
-    <div class="price-card">
-      <div class="featured-label" style="background:#888;">Coming Soon</div>
-      <div class="price-tag">📋 Annual Contract</div>
-      <div class="price-amount">$50K–$150K</div>
-      <p class="price-desc">Ongoing compliance monitoring, quarterly reviews, and full audit support for teams managing multiple AI systems.</p>
-    </div>
-    <div class="price-card">
-      <div class="featured-label" style="background:#888;">Coming Soon</div>
-      <div class="price-tag">🏢 Enterprise Platform</div>
-      <div class="price-amount">$250K+</div>
-      <p class="price-desc">Full-suite: continuous monitoring, API access, and custom regulatory mapping for large-scale AI deployments.</p>
     </div>
   </div>
 </section>
@@ -988,13 +1002,13 @@
     </div>
     <div class="roadmap-item now">
       <div class="roadmap-dot"></div>
-      <div class="roadmap-period">Now — Fall 2026</div>
+      <div class="roadmap-period">Now</div>
       <h4>First Pilots</h4>
       <p>MVP complete, opening first pilot and early-client assessments</p>
     </div>
     <div class="roadmap-item">
       <div class="roadmap-dot"></div>
-      <div class="roadmap-period">Q4 2026 / Early 2027</div>
+      <div class="roadmap-period">Next</div>
       <h4>First Case Studies</h4>
       <p>Complete first assessments and share results with client permission</p>
     </div>
@@ -1003,12 +1017,6 @@
       <div class="roadmap-period">2027</div>
       <h4>Platform v1</h4>
       <p>Automate the assessment workflow and expand EU AI Act coverage</p>
-    </div>
-    <div class="roadmap-item">
-      <div class="roadmap-dot"></div>
-      <div class="roadmap-period">Later</div>
-      <h4>Seed Round</h4>
-      <p>Scale go-to-market with seed funding</p>
     </div>
   </div>
 </section>
@@ -1069,17 +1077,17 @@
 <!-- CTA -->
 <section class="cta-section">
   <h2>The AI governance problem is here.<br>Taala is how you act on it.</h2>
-  <p>Get in touch to learn how Taala can protect your enterprise before deployment.</p>
+  <p>Not sure where to start? Submit your AI system for review, or email us with questions.</p>
   <div class="cta-actions">
     <a href="https://tally.so/r/gDgPY1" target="_blank" class="btn-white">Submit for Review →</a>
-    <a href="mailto:hello@taala.ai" class="btn-outline-white">Investor Inquiries</a>
+    <a href="mailto:hello@taala.ai" class="btn-outline-white">Contact Us</a>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
   <span class="footer-logo">Taala</span>
-  <span>Born at Columbia Business School · Pre-Seed 2026</span>
+  <span>Born at Columbia Business School</span>
   <a href="mailto:hello@taala.ai">hello@taala.ai</a>
 </footer>
 
