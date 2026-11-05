@@ -696,6 +696,31 @@
     .cta-actions { flex-direction: column; align-items: center; }
   }
 
+  /* LANGUAGE LAYER */
+  .lang-fr-only { display: none; }
+  html[lang="fr"] .lang-fr-only { display: block; }
+  .fr-note { font-size: 0.8125rem; color: var(--muted); font-style: italic; margin-top: 24px; }
+  .nav-right { display: flex; align-items: center; gap: 24px; }
+  .lang-switcher { position: relative; }
+  .lang-btn { display: flex; align-items: center; gap: 6px; background: transparent; border: 1px solid var(--border);
+    border-radius: 999px; padding: 6px 12px; font: inherit; font-size: 0.8125rem; font-weight: 500; color: var(--ink); cursor: pointer; }
+  .lang-btn:hover { border-color: var(--muted); }
+  .lang-btn svg { width: 14px; height: 14px; }
+  .lang-btn .chev { width: 10px; height: 10px; transition: transform 0.2s; }
+  .lang-switcher.open .chev { transform: rotate(180deg); }
+  .lang-dropdown { display: none; position: absolute; right: 0; top: calc(100% + 8px); min-width: 170px; background: #fff;
+    border: 1px solid var(--border); border-radius: 10px; box-shadow: 0 10px 30px rgba(10,13,20,0.12); padding: 6px; z-index: 200; }
+  .lang-switcher.open .lang-dropdown { display: block; }
+  .lang-option { display: flex; align-items: center; gap: 10px; width: 100%; background: transparent; border: 0; border-radius: 6px;
+    padding: 8px 10px; font: inherit; font-size: 0.875rem; color: var(--ink); cursor: pointer; text-align: left; }
+  .lang-option:hover { background: var(--paper); }
+  .lang-option.active { font-weight: 600; }
+  .lang-option .code { margin-left: auto; font-size: 0.75rem; color: var(--muted); }
+  .video-pair { display: flex; justify-content: center; align-items: flex-start; gap: 32px; flex-wrap: wrap; margin-top: 40px; }
+  .video-pair figure { margin: 0; width: 100%; max-width: 300px; }
+  .video-pair .overview-video { margin: 0; max-width: none; }
+  .video-pair figcaption { margin-top: 12px; font-size: 0.8125rem; font-weight: 600; color: var(--muted); letter-spacing: 0.04em; text-transform: uppercase; }
+
   .reveal {
     opacity: 0; transform: translateY(24px);
     transition: opacity 0.6s ease, transform 0.6s ease;
@@ -715,13 +740,26 @@
     </div>
     Taala
   </a>
+  <div class="nav-right">
   <ul class="nav-links">
-    <li><a href="#solution">Solution</a></li>
-    <li><a href="#product">Product</a></li>
-    <li><a href="#pricing">Pricing</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="https://tally.so/r/gDgPY1" target="_blank" class="nav-cta">Get Started</a></li>
+    <li><a href="#solution"><span data-i18n="nav_solution">Solution</span></a></li>
+    <li><a href="#product"><span data-i18n="nav_product">Product</span></a></li>
+    <li><a href="#pricing"><span data-i18n="nav_pricing">Pricing</span></a></li>
+    <li><a href="#about"><span data-i18n="nav_about">About</span></a></li>
+    <li><a href="https://tally.so/r/gDgPY1" target="_blank" class="nav-cta"><span data-i18n="nav_cta">Get Started</span></a></li>
   </ul>
+  <div class="lang-switcher" id="langSwitcher">
+    <button type="button" class="lang-btn" id="langBtn" aria-haspopup="true" aria-expanded="false" aria-label="Language / Langue">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+      <span id="langLabel">EN</span>
+      <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+    </button>
+    <div class="lang-dropdown" role="menu">
+      <button type="button" class="lang-option active" data-lang="en" role="menuitem">🇬🇧 <span>English</span><span class="code">EN</span></button>
+      <button type="button" class="lang-option" data-lang="fr" role="menuitem">🇫🇷 <span>Français</span><span class="code">FR</span></button>
+    </div>
+  </div>
+  </div>
 </nav>
 
 <!-- HERO -->
@@ -729,34 +767,34 @@
   <div class="hero-grid"></div>
   <div class="hero-badge">
     <span class="dot"></span>
-    Born from a Columbia Business School discussion · Now Taking Assessments
+    <span data-i18n="badge">Born from a Columbia Business School discussion · Now Taking Assessments</span>
   </div>
-  <h1>The <em>Trust & Compliance</em> Layer for Enterprise AI</h1>
-  <p class="hero-sub">Find the compliance gaps in your AI system before a regulator, customer, or lawsuit does — in 5 business days, for a fraction of what outside counsel charges. No code changes required.</p>
+  <h1 data-i18n="h1">The <em>Trust & Compliance</em> Layer for Enterprise AI</h1>
+  <p class="hero-sub"><span data-i18n="hero_sub">Find the compliance gaps in your AI system before a regulator, customer, or lawsuit does — in 5 business days, for a fraction of what outside counsel charges. No code changes required.</span></p>
   <div class="hero-actions">
     <a href="https://tally.so/r/gDgPY1" target="_blank" class="btn-primary">
-      Submit for Review
+      <span data-i18n="hero_btn_submit">Submit for Review</span>
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
     </a>
-    <a href="#solution" class="btn-secondary">How It Works</a>
+    <a href="#solution" class="btn-secondary"><span data-i18n="how_label_and_btn">How It Works</span></a>
   </div>
-  <p class="hero-note">Taala provides an informational risk assessment. It is not legal advice or a certification of compliance.</p>
+  <p class="hero-note"><span data-i18n="hero_note">Taala provides an informational risk assessment. It is not legal advice or a certification of compliance.</span></p>
   <div class="hero-stats">
     <div class="stat-item">
-      <div class="stat-num">5<span> days</span></div>
-      <div class="stat-label">From Submission to Full Report</div>
+      <div class="stat-num" data-i18n="stat1_num">5<span> days</span></div>
+      <div class="stat-label"><span data-i18n="stat1_label">From Submission to Full Report</span></div>
     </div>
     <div class="stat-item">
-      <div class="stat-num">$1,250</div>
-      <div class="stat-label">Early Client Rate</div>
+      <div class="stat-num"><span data-i18n="stat2_num">$1,250</span></div>
+      <div class="stat-label"><span data-i18n="stat2_label">Early Client Rate</span></div>
     </div>
     <div class="stat-item">
       <div class="stat-num">29<span> questions</span></div>
-      <div class="stat-label">In the Assessment Framework</div>
+      <div class="stat-label"><span data-i18n="stat3_label">In the Assessment Framework</span></div>
     </div>
     <div class="stat-item">
-      <div class="stat-num">Aug '26</div>
-      <div class="stat-label">EU AI Act Transparency Rules Live</div>
+      <div class="stat-num"><span data-i18n="stat4_num">Aug '26</span></div>
+      <div class="stat-label"><span data-i18n="stat4_label">EU AI Act Transparency Rules Live</span></div>
     </div>
   </div>
 </section>
@@ -764,44 +802,58 @@
 <!-- OVERVIEW VIDEO -->
 <section class="overview-section" id="overview">
   <div class="reveal">
-    <div class="section-label">Overview</div>
-    <h2>See it in under a minute.</h2>
+    <div class="section-label"><span data-i18n="ov_label">Overview</span></div>
+    <h2><span data-i18n="ov_h2">See it in under a minute.</span></h2>
   </div>
-  <div class="overview-video reveal">
-    <video controls preload="metadata" playsinline poster="assets/taala_thumbnail.png" aria-label="Taala AI overview video">
-      <source src="assets/taala_launch.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
+  <div class="video-pair reveal">
+    <figure>
+      <div class="overview-video">
+        <video controls preload="metadata" playsinline poster="assets/taala_thumbnail.png" aria-label="Taala AI overview video (English)">
+          <source src="assets/taala_launch.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      <figcaption>English</figcaption>
+    </figure>
+    <figure>
+      <div class="overview-video">
+        <video controls preload="metadata" playsinline poster="assets/taala_thumbnail_fr.png" aria-label="Vidéo de présentation de Taala AI (français)">
+          <source src="assets/taala_launch_fr.mp4" type="video/mp4">
+          Votre navigateur ne prend pas en charge la balise vidéo.
+        </video>
+      </div>
+      <figcaption>Français</figcaption>
+    </figure>
   </div>
 </section>
 
 <!-- PROBLEM -->
 <section class="problem-section" id="problem">
   <div class="reveal">
-    <div class="section-label">The Problem</div>
-    <h2>One undocumented gap can cost more than your entire compliance budget.</h2>
-    <p class="section-intro">Most teams deploying AI can't prove where their training data came from, whether they own their outputs, or which rules apply to them. That gap stays invisible until it becomes a fine, a lost deal, or a lawsuit.</p>
+    <div class="section-label"><span data-i18n="pb_label">The Problem</span></div>
+    <h2><span data-i18n="pb_h2">One undocumented gap can cost more than your entire compliance budget.</span></h2>
+    <p class="section-intro"><span data-i18n="pb_intro">Most teams deploying AI can't prove where their training data came from, whether they own their outputs, or which rules apply to them. That gap stays invisible until it becomes a fine, a lost deal, or a lawsuit.</span></p>
   </div>
   <div class="problem-grid reveal">
     <div class="problem-card">
       <div class="problem-icon">⚠️</div>
-      <h3>Stalled Enterprise Deals</h3>
-      <p>Enterprise buyers increasingly ask where your training data came from. If you can't answer, procurement stalls and the deal goes to a competitor who can.</p>
+      <h3><span data-i18n="pb1_h">Stalled Enterprise Deals</span></h3>
+      <p><span data-i18n="pb1_p">Enterprise buyers increasingly ask where your training data came from. If you can't answer, procurement stalls and the deal goes to a competitor who can.</span></p>
     </div>
     <div class="problem-card">
       <div class="problem-icon">©️</div>
-      <h3>Copyright Litigation</h3>
-      <p>Courts are actively ruling on AI training and outputs. Finding exposure yourself costs a review; having a rights holder find it costs a lawsuit.</p>
+      <h3><span data-i18n="pb2_h">Copyright Litigation</span></h3>
+      <p><span data-i18n="pb2_p">Courts are actively ruling on AI training and outputs. Finding exposure yourself costs a review; having a rights holder find it costs a lawsuit.</span></p>
     </div>
     <div class="problem-card">
       <div class="problem-icon">🌐</div>
-      <h3>Regulatory Fines</h3>
-      <p>EU AI Act penalties reach up to €35M or 7% of global annual turnover for the most serious violations, and the Act can apply to US companies whose AI is used in the EU. Knowing which obligations apply to you is the first step.</p>
+      <h3><span data-i18n="pb3_h">Regulatory Fines</span></h3>
+      <p><span data-i18n="pb3_p">EU AI Act penalties reach up to €35M or 7% of global annual turnover for the most serious violations, and the Act can apply to US companies whose AI is used in the EU. Knowing which obligations apply to you is the first step.</span></p>
     </div>
     <div class="problem-card">
       <div class="problem-icon">🔍</div>
-      <h3>Failed Audits & Due Diligence</h3>
-      <p>Investors, acquirers, and auditors expect documentation you may not have. Gaps found late delay rounds, reprice deals, and cost far more to fix under pressure.</p>
+      <h3><span data-i18n="pb4_h">Failed Audits & Due Diligence</span></h3>
+      <p><span data-i18n="pb4_p">Investors, acquirers, and auditors expect documentation you may not have. Gaps found late delay rounds, reprice deals, and cost far more to fix under pressure.</span></p>
     </div>
   </div>
 </section>
@@ -809,33 +861,33 @@
 <!-- HOW IT WORKS -->
 <section id="solution">
   <div class="reveal">
-    <div class="section-label">How It Works</div>
-    <h2>From submission to a clear risk report in four steps.</h2>
-    <p class="section-intro">No retraining, code changes, or system integrations required. Taala reviews what you already have.</p>
+    <div class="section-label"><span data-i18n="how_label_and_btn">How It Works</span></div>
+    <h2><span data-i18n="hw_h2">From submission to a clear risk report in four steps.</span></h2>
+    <p class="section-intro"><span data-i18n="hw_intro">No retraining, code changes, or system integrations required. Taala reviews what you already have.</span></p>
   </div>
   <div class="steps-wrapper reveal">
     <div class="step-card">
-      <div class="step-num">Step 01</div>
-      <h3>Submit</h3>
-      <p>Provide an AI model, training dataset, or model documentation. Taala reviews what you already have.</p>
+      <div class="step-num"><span data-i18n="hw1_num">Step 01</span></div>
+      <h3><span data-i18n="hw1_h">Submit</span></h3>
+      <p><span data-i18n="hw1_p">Provide an AI model, training dataset, or model documentation. Taala reviews what you already have.</span></p>
       <div class="step-connector">→</div>
     </div>
     <div class="step-card">
-      <div class="step-num">Step 02</div>
-      <h3>Analyze</h3>
-      <p>Taala evaluates IP provenance, copyright exposure, regulatory mapping, and audit readiness across your materials.</p>
+      <div class="step-num"><span data-i18n="hw2_num">Step 02</span></div>
+      <h3><span data-i18n="hw2_h">Analyze</span></h3>
+      <p><span data-i18n="hw2_p">Taala evaluates IP provenance, copyright exposure, regulatory mapping, and audit readiness across your materials.</span></p>
       <div class="step-connector">→</div>
     </div>
     <div class="step-card">
-      <div class="step-num">Step 03</div>
-      <h3>Report</h3>
-      <p>Receive a risk summary, risk breakdown, and review-ready documentation for internal or external review.</p>
+      <div class="step-num"><span data-i18n="hw3_num">Step 03</span></div>
+      <h3><span data-i18n="hw3_h">Report</span></h3>
+      <p><span data-i18n="hw3_p">Receive a risk summary, risk breakdown, and review-ready documentation for internal or external review.</span></p>
       <div class="step-connector">→</div>
     </div>
     <div class="step-card">
-      <div class="step-num">Step 04</div>
-      <h3>Deploy</h3>
-      <p>Act on the findings: address identified gaps before they become costly legal or regulatory problems.</p>
+      <div class="step-num"><span data-i18n="hw4_num">Step 04</span></div>
+      <h3><span data-i18n="hw4_h">Deploy</span></h3>
+      <p><span data-i18n="hw4_p">Act on the findings: address identified gaps before they become costly legal or regulatory problems.</span></p>
     </div>
   </div>
 </section>
@@ -843,37 +895,37 @@
 <!-- PRODUCT -->
 <section id="product" style="background: white;">
   <div class="reveal">
-    <div class="section-label">Product</div>
-    <h2>Four checks. Each one closes a gap that could cost you.</h2>
-    <p class="section-intro">Every finding comes with a risk rating and concrete fixes, so you know what to address first and what it protects you from.</p>
+    <div class="section-label"><span data-i18n="nav_product">Product</span></div>
+    <h2><span data-i18n="pr_h2">Four checks. Each one closes a gap that could cost you.</span></h2>
+    <p class="section-intro"><span data-i18n="pr_intro">Every finding comes with a risk rating and concrete fixes, so you know what to address first and what it protects you from.</span></p>
   </div>
   <div class="checks-grid reveal">
     <div class="check-card">
       <div class="check-icon">🔐</div>
       <div>
-        <h3>IP Provenance</h3>
-        <p>Assesses potential ownership and licensing risk related to training data sources. Surfaces documentation gaps before they become disputes.</p>
+        <h3><span data-i18n="pr1_h">IP Provenance</span></h3>
+        <p><span data-i18n="pr1_p">Assesses potential ownership and licensing risk related to training data sources. Surfaces documentation gaps before they become disputes.</span></p>
       </div>
     </div>
     <div class="check-card">
       <div class="check-icon">📋</div>
       <div>
-        <h3>Copyright Exposure</h3>
-        <p>Identifies potential infringement or similarity to protected works. Evaluates training data against known copyrighted material.</p>
+        <h3><span data-i18n="pr2_h">Copyright Exposure</span></h3>
+        <p><span data-i18n="pr2_p">Identifies potential infringement or similarity to protected works. Evaluates training data against known copyrighted material.</span></p>
       </div>
     </div>
     <div class="check-card">
       <div class="check-icon">🗺️</div>
       <div>
-        <h3>Regulatory Mapping</h3>
-        <p>Maps model use cases to applicable regulatory frameworks including the EU AI Act, CCPA, and sector-specific requirements.</p>
+        <h3><span data-i18n="pr3_h">Regulatory Mapping</span></h3>
+        <p><span data-i18n="pr3_p">Maps model use cases to applicable regulatory frameworks including the EU AI Act, CCPA, and sector-specific requirements.</span></p>
       </div>
     </div>
     <div class="check-card">
       <div class="check-icon">✅</div>
       <div>
-        <h3>Audit Readiness</h3>
-        <p>Evaluates documentation completeness and traceability for legal review. Generates the artifacts your legal team needs.</p>
+        <h3><span data-i18n="pr4_h">Audit Readiness</span></h3>
+        <p><span data-i18n="pr4_p">Evaluates documentation completeness and traceability for legal review. Generates the artifacts your legal team needs.</span></p>
       </div>
     </div>
   </div>
@@ -882,11 +934,12 @@
 <!-- SAMPLE OUTPUT -->
 <section class="output-section">
   <div class="reveal">
-    <div class="section-label">Sample Output</div>
-    <h2>What you receive after analysis.</h2>
-    <p class="section-intro">A structured compliance report with actionable risk breakdown and generated legal artifacts.</p>
+    <div class="section-label"><span data-i18n="so_label">Sample Output</span></div>
+    <h2><span data-i18n="so_h2">What you receive after analysis.</span></h2>
+    <p class="section-intro"><span data-i18n="so_intro">A structured compliance report with actionable risk breakdown and generated legal artifacts.</span></p>
   </div>
-  <div class="output-demo reveal">
+  <p class="lang-fr-only fr-note">L'exemple ci-dessous est en anglais, langue dans laquelle les rapports sont remis.</p>
+  <div class="output-demo reveal" lang="en">
     <div class="output-header">
       <span class="dot-r"></span>
       <span class="dot-y"></span>
@@ -970,18 +1023,19 @@
 <!-- PRICING -->
 <section id="pricing" style="background: var(--paper);">
   <div class="reveal">
-    <div class="section-label">Pricing</div>
-    <h2>One assessment. Fixed scope. Fixed price.</h2>
-    <p class="section-intro">A structured risk report on your AI system, delivered in 5 business days.</p>
+    <div class="section-label"><span data-i18n="nav_pricing">Pricing</span></div>
+    <h2><span data-i18n="pc_h2">One assessment. Fixed scope. Fixed price.</span></h2>
+    <p class="section-intro"><span data-i18n="pc_intro">A structured risk report on your AI system, delivered in 5 business days.</span></p>
   </div>
   <div class="pricing-grid reveal" style="grid-template-columns:1fr;max-width:520px;">
     <div class="price-card featured">
-      <div class="featured-label">Available Now</div>
-      <div class="price-tag">🔍 Per-Assessment</div>
-      <div class="price-amount">$2,500</div>
-      <p class="price-desc">One-time structured compliance report covering IP provenance, copyright exposure, EU AI Act regulatory mapping, and audit readiness. Delivered in 5 business days.</p>
-      <p class="price-desc" style="margin-top:10px;color:#7b9cff;font-weight:500;">Early client offer: $1,250 in exchange for a testimonial — available for our first few clients.</p>
-      <p class="price-desc" style="margin-top:10px;color:#7b9cff;font-weight:500;">A few free pilot assessments are also open to early AI teams. Request one when you submit.</p>
+      <div class="featured-label"><span data-i18n="pc_featured">Available Now</span></div>
+      <div class="price-tag"><span data-i18n="pc_tag">🔍 Per-Assessment</span></div>
+      <div class="price-amount"><span data-i18n="pc_price">$2,500</span></div>
+      <p class="price-desc"><span data-i18n="pc_p1">One-time structured compliance report covering IP provenance, copyright exposure, EU AI Act regulatory mapping, and audit readiness. Delivered in 5 business days.</span></p>
+      <p class="price-desc" style="margin-top:10px;color:#7b9cff;font-weight:500;"><span data-i18n="pc_p2">Early client offer: $1,250 in exchange for a testimonial — available for our first few clients.</span></p>
+      <p class="price-desc" style="margin-top:10px;color:#7b9cff;font-weight:500;"><span data-i18n="pc_p3">A few free pilot assessments are also open to early AI teams. Request one when you submit.</span></p>
+      <p class="price-desc" style="margin-top:10px;"><span data-i18n="pc_lang">Reports are delivered in English.</span></p>
     </div>
   </div>
 </section>
@@ -989,34 +1043,34 @@
 <!-- ROADMAP -->
 <section style="background: white;">
   <div class="reveal">
-    <div class="section-label">Roadmap</div>
-    <h2>From concept to first clients.</h2>
-    <p class="section-intro">Born from a Columbia Business School discussion. Moving toward first revenue.</p>
+    <div class="section-label"><span data-i18n="rm_label">Roadmap</span></div>
+    <h2><span data-i18n="rm_h2">From concept to first clients.</span></h2>
+    <p class="section-intro"><span data-i18n="rm_intro">Born from a Columbia Business School discussion. Moving toward first revenue.</span></p>
   </div>
   <div class="roadmap-list reveal">
     <div class="roadmap-item done">
       <div class="roadmap-dot"></div>
-      <div class="roadmap-period">Completed</div>
-      <h4>Foundation</h4>
-      <p>Product concept, live demo, website, and IP framework defined</p>
+      <div class="roadmap-period"><span data-i18n="rm1_period">Completed</span></div>
+      <h4><span data-i18n="rm1_h">Foundation</span></h4>
+      <p><span data-i18n="rm1_p">Product concept, live demo, website, and IP framework defined</span></p>
     </div>
     <div class="roadmap-item now">
       <div class="roadmap-dot"></div>
-      <div class="roadmap-period">Now</div>
-      <h4>First Pilots</h4>
-      <p>MVP complete, opening first pilot and early-client assessments</p>
+      <div class="roadmap-period"><span data-i18n="rm2_period">Now</span></div>
+      <h4><span data-i18n="rm2_h">First Pilots</span></h4>
+      <p><span data-i18n="rm2_p">MVP complete, opening first pilot and early-client assessments</span></p>
     </div>
     <div class="roadmap-item">
       <div class="roadmap-dot"></div>
-      <div class="roadmap-period">Next</div>
-      <h4>First Case Studies</h4>
-      <p>Complete first assessments and share results with client permission</p>
+      <div class="roadmap-period"><span data-i18n="rm3_period">Next</span></div>
+      <h4><span data-i18n="rm3_h">First Case Studies</span></h4>
+      <p><span data-i18n="rm3_p">Complete first assessments and share results with client permission</span></p>
     </div>
     <div class="roadmap-item">
       <div class="roadmap-dot"></div>
       <div class="roadmap-period">2027</div>
-      <h4>Platform v1</h4>
-      <p>Automate the assessment workflow and expand EU AI Act coverage</p>
+      <h4><span data-i18n="rm4_h">Platform v1</span></h4>
+      <p><span data-i18n="rm4_p">Automate the assessment workflow and expand EU AI Act coverage</span></p>
     </div>
   </div>
 </section>
@@ -1024,51 +1078,51 @@
 <!-- FOUNDER -->
 <section id="about">
   <div class="reveal">
-    <div class="section-label">Why Taala</div>
-    <h2>Can't you just use ChatGPT, Claude, Gemini, or another AI tool?</h2>
-    <p class="section-intro">You could. Here's what you'd be missing.</p>
+    <div class="section-label"><span data-i18n="wy_label">Why Taala</span></div>
+    <h2><span data-i18n="wy_h2">Can't you just use ChatGPT, Claude, Gemini, or another AI tool?</span></h2>
+    <p class="section-intro"><span data-i18n="wy_intro">You could. Here's what you'd be missing.</span></p>
   </div>
   <div class="reveal" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem;margin:2.5rem 0;">
     <div style="background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:1.75rem;">
       <div style="font-size:1.5rem;margin-bottom:0.75rem;">🗂️</div>
-      <div style="font-weight:600;margin-bottom:0.5rem;">The right framework</div>
-      <p style="color:var(--text-secondary);font-size:0.95rem;line-height:1.7;">29 questions mapped to real regulatory standards — EU AI Act Articles 11, 14, and 72, HIPAA, GDPR, and IP provenance requirements. Building that yourself takes weeks.</p>
+      <div style="font-weight:600;margin-bottom:0.5rem;"><span data-i18n="wy1_h">The right framework</span></div>
+      <p style="color:var(--text-secondary);font-size:0.95rem;line-height:1.7;"><span data-i18n="wy1_p">29 questions mapped to real regulatory standards — EU AI Act Articles 11, 14, and 72, HIPAA, GDPR, and IP provenance requirements. Building that yourself takes weeks.</span></p>
     </div>
     <div style="background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:1.75rem;">
       <div style="font-size:1.5rem;margin-bottom:0.75rem;">📄</div>
-      <div style="font-weight:600;margin-bottom:0.5rem;">A deliverable, not a chat</div>
-      <p style="color:var(--text-secondary);font-size:0.95rem;line-height:1.7;">A 7-page structured report with risk ratings, findings, recommendations, a documentation checklist, and a legal review memo — something you can hand to a board, a regulator, or outside counsel.</p>
+      <div style="font-weight:600;margin-bottom:0.5rem;"><span data-i18n="wy2_h">A deliverable, not a chat</span></div>
+      <p style="color:var(--text-secondary);font-size:0.95rem;line-height:1.7;"><span data-i18n="wy2_p">A 7-page structured report with risk ratings, findings, recommendations, a documentation checklist, and a legal review memo — something you can hand to a board, a regulator, or outside counsel.</span></p>
     </div>
     <div style="background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:1.75rem;">
       <div style="font-size:1.5rem;margin-bottom:0.75rem;">✍️</div>
-      <div style="font-weight:600;margin-bottom:0.5rem;">Accountability</div>
-      <p style="color:var(--text-secondary);font-size:0.95rem;line-height:1.7;">Every Taala report is reviewed by a human analyst, so there is a named author behind the analysis. A ChatGPT conversation has no author. That matters when regulators or customers ask questions.</p>
+      <div style="font-weight:600;margin-bottom:0.5rem;"><span data-i18n="wy3_h">Accountability</span></div>
+      <p style="color:var(--text-secondary);font-size:0.95rem;line-height:1.7;"><span data-i18n="wy3_p">Every Taala report is reviewed by a human analyst, so there is a named author behind the analysis. A ChatGPT conversation has no author. That matters when regulators or customers ask questions.</span></p>
     </div>
     <div style="background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:1.75rem;">
       <div style="font-size:1.5rem;margin-bottom:0.75rem;">⚡</div>
-      <div style="font-weight:600;margin-bottom:0.5rem;">Speed</div>
-      <p style="color:var(--text-secondary);font-size:0.95rem;line-height:1.7;">A full compliance review delivered in 5 business days. Building the same output internally requires expertise across IP law, copyright, and EU AI Act compliance — simultaneously.</p>
+      <div style="font-weight:600;margin-bottom:0.5rem;"><span data-i18n="wy4_h">Speed</span></div>
+      <p style="color:var(--text-secondary);font-size:0.95rem;line-height:1.7;"><span data-i18n="wy4_p">A full compliance review delivered in 5 business days. Building the same output internally requires expertise across IP law, copyright, and EU AI Act compliance — simultaneously.</span></p>
     </div>
   </div>
 
   <div class="reveal" style="margin-top:4rem;">
-    <div class="section-label">Founder</div>
-    <h2>Built by someone who asked the right question.</h2>
+    <div class="section-label"><span data-i18n="fd_label">Founder</span></div>
+    <h2><span data-i18n="fd_h2">Built by someone who asked the right question.</span></h2>
   </div>
   <div class="founder-card reveal">
     <div class="founder-avatar"><img src="assets/anuraag-hooda.jpg" alt="Anuraag Hooda"></div>
     <div>
       <div class="founder-name">Anuraag Hooda</div>
-      <div class="founder-role">Founder & CEO, Taala.ai</div>
+      <div class="founder-role"><span data-i18n="fd_role">Founder & CEO, Taala.ai</span></div>
       <ul class="founder-bullets">
         <li>MA — Columbia University (2026)</li>
-        <li>Founded Taala from a Columbia Business School discussion on AI ownership</li>
+        <li><span data-i18n="fd_b2">Founded Taala from a Columbia Business School discussion on AI ownership</span></li>
       </ul>
       <blockquote class="founder-quote">
-        "Who owns what AI creates? Taala is the infrastructure that answers that question."
+        <span data-i18n="fd_quote">"Who owns what AI creates? Taala is the infrastructure that answers that question."</span>
       </blockquote>
       <div class="founder-links">
-        <a href="https://www.linkedin.com/in/anu-h1" target="_blank" rel="noopener">Connect on LinkedIn →</a>
+        <a href="https://www.linkedin.com/in/anu-h1" target="_blank" rel="noopener"><span data-i18n="fd_link">Connect on LinkedIn →</span></a>
       </div>
     </div>
   </div>
@@ -1076,22 +1130,156 @@
 
 <!-- CTA -->
 <section class="cta-section">
-  <h2>The AI governance problem is here.<br>Taala is how you act on it.</h2>
-  <p>Not sure where to start? Submit your AI system for review, or email us with questions.</p>
+  <h2 data-i18n="cta_h2">The AI governance problem is here.<br>Taala is how you act on it.</h2>
+  <p><span data-i18n="cta_p">Not sure where to start? Submit your AI system for review, or email us with questions.</span></p>
   <div class="cta-actions">
-    <a href="https://tally.so/r/gDgPY1" target="_blank" class="btn-white">Submit for Review →</a>
-    <a href="mailto:hello@taala.ai" class="btn-outline-white">Contact Us</a>
+    <a href="https://tally.so/r/gDgPY1" target="_blank" class="btn-white"><span data-i18n="cta_btn1">Submit for Review →</span></a>
+    <a href="mailto:hello@taala.ai" class="btn-outline-white"><span data-i18n="cta_btn2">Contact Us</span></a>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
   <span class="footer-logo">Taala</span>
-  <span>Born at Columbia Business School</span>
+  <span><span data-i18n="ft_born">Born at Columbia Business School</span></span>
   <a href="mailto:hello@taala.ai">hello@taala.ai</a>
 </footer>
 
 <script>
+
+  // ---------- LANGUAGE LAYER (English default; French draft) ----------
+  const FR_TITLE = "Taala.ai — La couche de confiance et de conformité pour l'IA d'entreprise";
+  const EN_TITLE = document.title;
+  const FR = {
+  "nav_solution": "Solution",
+  "nav_product": "Produit",
+  "nav_pricing": "Tarifs",
+  "nav_about": "À propos",
+  "nav_cta": "Commencer",
+  "badge": "Née d'une discussion à Columbia Business School · Évaluations désormais ouvertes",
+  "h1": "La couche de <em>confiance et de conformité</em> pour l'IA d'entreprise",
+  "hero_sub": "Identifiez les lacunes de conformité de votre système d'IA avant qu'un régulateur, un client ou un procès ne le fasse, en 5 jours ouvrables et pour une fraction du coût d'un cabinet d'avocats externe. Aucune modification de code requise.",
+  "hero_btn_submit": "Soumettre pour évaluation",
+  "how_label_and_btn": "Comment ça marche",
+  "hero_note": "Taala fournit une évaluation des risques à titre informatif. Il ne s'agit ni d'un avis juridique ni d'une certification de conformité.",
+  "stat1_num": "5<span> jours</span>",
+  "stat1_label": "Du dépôt au rapport complet",
+  "stat2_num": "1 250 $",
+  "stat2_label": "Tarif pour les premiers clients",
+  "stat3_label": "Dans le cadre d'évaluation",
+  "stat4_num": "Août 2026",
+  "stat4_label": "Règles de transparence de l'AI Act européen en vigueur",
+  "ov_label": "Aperçu",
+  "ov_h2": "Découvrez-le en moins d'une minute.",
+  "pb_label": "Le problème",
+  "pb_h2": "Une seule lacune non documentée peut coûter plus cher que tout votre budget de conformité.",
+  "pb_intro": "La plupart des équipes qui déploient de l'IA ne peuvent pas prouver d'où viennent leurs données d'entraînement, si elles possèdent leurs résultats, ni quelles règles s'appliquent à elles. Cette lacune reste invisible jusqu'à ce qu'elle devienne une amende, un contrat perdu ou un procès.",
+  "pb1_h": "Contrats d'entreprise bloqués",
+  "pb1_p": "Les acheteurs d'entreprise demandent de plus en plus d'où viennent vos données d'entraînement. Sans réponse, les achats se bloquent et le contrat revient à un concurrent qui peut répondre.",
+  "pb2_h": "Litiges en droit d'auteur",
+  "pb2_p": "Les tribunaux se prononcent activement sur l'entraînement et les résultats de l'IA. Repérer vous-même une exposition coûte une revue ; si c'est un titulaire de droits qui la trouve, cela coûte un procès.",
+  "pb3_h": "Sanctions réglementaires",
+  "pb3_p": "Les sanctions prévues par l'AI Act européen peuvent atteindre 35 M€ ou 7 % du chiffre d'affaires annuel mondial pour les infractions les plus graves, et le règlement peut s'appliquer aux entreprises américaines dont l'IA est utilisée dans l'UE. Savoir quelles obligations s'appliquent à vous est la première étape.",
+  "pb4_h": "Audits et due diligence échoués",
+  "pb4_p": "Investisseurs, acquéreurs et auditeurs attendent une documentation que vous n'avez peut-être pas. Les lacunes découvertes tard retardent les levées de fonds, font baisser les valorisations et coûtent bien plus à corriger sous pression.",
+  "hw_h2": "De la soumission à un rapport de risques clair en quatre étapes.",
+  "hw_intro": "Aucun réentraînement, aucune modification de code ni intégration système. Taala examine ce que vous avez déjà.",
+  "hw1_num": "Étape 01",
+  "hw1_h": "Soumettre",
+  "hw1_p": "Fournissez un modèle d'IA, un jeu de données d'entraînement ou la documentation du modèle. Taala examine ce que vous avez déjà.",
+  "hw2_num": "Étape 02",
+  "hw2_h": "Analyser",
+  "hw2_p": "Taala évalue la provenance de la propriété intellectuelle, l'exposition au droit d'auteur, la cartographie réglementaire et la préparation à l'audit à partir de vos documents.",
+  "hw3_num": "Étape 03",
+  "hw3_h": "Rapport",
+  "hw3_p": "Recevez une synthèse des risques, le détail des risques et une documentation prête pour une revue interne ou externe.",
+  "hw4_num": "Étape 04",
+  "hw4_h": "Déployer",
+  "hw4_p": "Agissez sur les constats : comblez les lacunes identifiées avant qu'elles ne deviennent des problèmes juridiques ou réglementaires coûteux.",
+  "pr_h2": "Quatre vérifications. Chacune comble une lacune qui pourrait vous coûter cher.",
+  "pr_intro": "Chaque constat est accompagné d'une note de risque et de correctifs concrets, pour que vous sachiez quoi traiter en premier et ce que cela vous évite.",
+  "pr1_h": "Provenance de la propriété intellectuelle",
+  "pr1_p": "Évalue les risques potentiels de propriété et de licence liés aux sources des données d'entraînement. Met en évidence les lacunes de documentation avant qu'elles ne deviennent des litiges.",
+  "pr2_h": "Exposition au droit d'auteur",
+  "pr2_p": "Identifie les risques potentiels de contrefaçon ou de similitude avec des œuvres protégées. Évalue les données d'entraînement au regard de contenus protégés connus.",
+  "pr3_h": "Cartographie réglementaire",
+  "pr3_p": "Associe les cas d'usage du modèle aux cadres réglementaires applicables, dont l'AI Act européen, le CCPA et les exigences sectorielles.",
+  "pr4_h": "Préparation à l'audit",
+  "pr4_p": "Évalue l'exhaustivité et la traçabilité de la documentation en vue d'une revue juridique. Produit les documents dont votre équipe juridique a besoin.",
+  "so_label": "Exemple de rapport",
+  "so_h2": "Ce que vous recevez après l'analyse.",
+  "so_intro": "Un rapport structuré avec une ventilation des risques exploitable et des documents juridiques générés.",
+  "pc_h2": "Une évaluation. Périmètre fixe. Prix fixe.",
+  "pc_intro": "Un rapport de risques structuré sur votre système d'IA, remis en 5 jours ouvrables.",
+  "pc_featured": "Disponible maintenant",
+  "pc_tag": "🔍 Par évaluation",
+  "pc_price": "2 500 $",
+  "pc_p1": "Rapport structuré ponctuel couvrant la provenance de la propriété intellectuelle, l'exposition au droit d'auteur, la cartographie de l'AI Act européen et la préparation à l'audit. Remis en 5 jours ouvrables.",
+  "pc_p2": "Offre premiers clients : 1 250 $ en échange d'un témoignage, réservée à nos premiers clients.",
+  "pc_p3": "Quelques évaluations pilotes gratuites sont aussi ouvertes aux équipes d'IA en phase de démarrage. Demandez-en une lors de votre soumission.",
+  "pc_lang": "Les rapports sont remis en anglais.",
+  "rm_label": "Feuille de route",
+  "rm_h2": "Du concept aux premiers clients.",
+  "rm_intro": "Née d'une discussion à Columbia Business School. En route vers les premiers revenus.",
+  "rm1_period": "Terminé",
+  "rm1_h": "Fondations",
+  "rm1_p": "Concept produit, démonstration en ligne, site web et cadre de propriété intellectuelle définis",
+  "rm2_period": "Maintenant",
+  "rm2_h": "Premiers pilotes",
+  "rm2_p": "MVP terminé ; ouverture des premiers pilotes et des évaluations pour les premiers clients",
+  "rm3_period": "Ensuite",
+  "rm3_h": "Premières études de cas",
+  "rm3_p": "Réaliser les premières évaluations et partager les résultats avec l'accord des clients",
+  "rm4_h": "Plateforme v1",
+  "rm4_p": "Automatiser le processus d'évaluation et élargir la couverture de l'AI Act européen",
+  "wy_label": "Pourquoi Taala",
+  "wy_h2": "Vous ne pouvez pas simplement utiliser ChatGPT, Claude, Gemini ou un autre outil d'IA ?",
+  "wy_intro": "Vous le pouvez. Voici ce qui vous manquerait.",
+  "wy1_h": "Le bon cadre",
+  "wy1_p": "29 questions alignées sur de véritables normes réglementaires : articles 11, 14 et 72 de l'AI Act européen, HIPAA, RGPD et exigences de provenance de la propriété intellectuelle. Construire cela soi-même prend des semaines.",
+  "wy2_h": "Un livrable, pas une conversation",
+  "wy2_p": "Un rapport structuré de 7 pages avec notes de risque, constats, recommandations, une liste de contrôle documentaire et une note de revue juridique, que vous pouvez remettre à un conseil d'administration, à un régulateur ou à un avocat externe.",
+  "wy3_h": "Responsabilité",
+  "wy3_p": "Chaque rapport Taala est relu par un analyste humain : l'analyse a donc un auteur identifié. Une conversation avec ChatGPT n'en a pas. Cela compte quand des régulateurs ou des clients posent des questions.",
+  "wy4_h": "Rapidité",
+  "wy4_p": "Une revue de conformité complète remise en 5 jours ouvrables. Produire le même résultat en interne exige simultanément une expertise en droit de la propriété intellectuelle, en droit d'auteur et en conformité à l'AI Act européen.",
+  "fd_label": "Fondateur",
+  "fd_h2": "Créé par quelqu'un qui a posé la bonne question.",
+  "fd_role": "Fondateur et CEO, Taala.ai",
+  "fd_b2": "A fondé Taala à partir d'une discussion à Columbia Business School sur la propriété de l'IA",
+  "fd_quote": "« Qui possède ce que l'IA crée ? Taala est l'infrastructure qui répond à cette question. »",
+  "fd_link": "Se connecter sur LinkedIn →",
+  "cta_h2": "Le problème de la gouvernance de l'IA est là.<br>Taala est le moyen d'agir.",
+  "cta_p": "Vous ne savez pas par où commencer ? Soumettez votre système d'IA pour évaluation, ou écrivez-nous pour poser vos questions.",
+  "cta_btn1": "Soumettre pour évaluation →",
+  "cta_btn2": "Nous contacter",
+  "ft_born": "Né à Columbia Business School"
+};
+  function setLang(lang) {
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      if (el.dataset.en === undefined) el.dataset.en = el.innerHTML;
+      const k = el.dataset.i18n;
+      el.innerHTML = (lang === 'fr' && FR[k] !== undefined) ? FR[k] : el.dataset.en;
+    });
+    document.documentElement.lang = lang;
+    document.title = lang === 'fr' ? FR_TITLE : EN_TITLE;
+    const l = document.getElementById('langLabel'); if (l) l.textContent = lang.toUpperCase();
+    document.querySelectorAll('.lang-option').forEach(o => o.classList.toggle('active', o.dataset.lang === lang));
+    try { localStorage.setItem('taala_lang', lang); } catch (e) {}
+  }
+  (function initLang() {
+    const sw = document.getElementById('langSwitcher'), btn = document.getElementById('langBtn');
+    const close = () => { sw.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); };
+    btn.addEventListener('click', e => { e.stopPropagation(); const o = sw.classList.toggle('open'); btn.setAttribute('aria-expanded', o); });
+    document.addEventListener('click', e => { if (!sw.contains(e.target)) close(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
+    document.querySelectorAll('.lang-option').forEach(o => o.addEventListener('click', () => { setLang(o.dataset.lang); close(); }));
+    const q = new URLSearchParams(location.search).get('lang');
+    let saved = null; try { saved = localStorage.getItem('taala_lang'); } catch (e) {}
+    const want = (q === 'fr' || q === 'en') ? q : saved;
+    if (want === 'fr') setLang('fr');
+  })();
+
   // Scroll reveal
   const reveals = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver((entries) => {
